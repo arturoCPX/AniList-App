@@ -2,8 +2,8 @@
 function searchAnime(event) {
     event.preventDefault();
     var searchTerm = document.getElementById("navbarSearchInput").value.trim();
-    if (searchTerm === "") {
-        alert("Por favor, introduce un término de búsqueda.");
+    if (!searchTerm || searchTerm === "") {
+        alert("Por favor, introduce un término de búsqueda válido.");
         return;
     }
     fetchAnimeData(searchTerm);
@@ -30,7 +30,7 @@ function fetchAnimeData(searchTerm) {
 
     var variables = {
         page: 1,
-        perPage: 10,
+        perPage: 15,
         search: searchTerm
     };
 
@@ -50,6 +50,10 @@ function fetchAnimeData(searchTerm) {
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
+            if (data.errors) {
+                alert('Error: ' + data.errors[0].message);
+                return;
+            }
             document.getElementById("searchResults").innerHTML = "";
             data.data.Page.media.forEach(anime => {
                 if (!anime.genres.includes("Hentai")) {
@@ -140,5 +144,5 @@ function viewAnimeDetails(animeId) {
         })
         .catch(error => console.error('Error:', error));
 }
-
+  
 document.getElementById("searchForm").addEventListener("submit", searchAnime);
