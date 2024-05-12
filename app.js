@@ -1,7 +1,7 @@
 // Función para buscar anime
 function searchAnime(event) {
     event.preventDefault();
-    var searchTerm = document.getElementById("searchInput").value.trim();
+    var searchTerm = document.getElementById("navbarSearchInput").value.trim();
     if (searchTerm === "") {
         alert("Por favor, introduce un término de búsqueda.");
         return;
