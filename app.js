@@ -50,11 +50,8 @@ function fetchAnimeData(searchTerm) {
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
-            // Limpiar resultados anteriores
             document.getElementById("searchResults").innerHTML = "";
-            // Mostrar los resultados en la página
             data.data.Page.media.forEach(anime => {
-                // Filtrar animes Hentai
                 if (!anime.genres.includes("Hentai")) {
                     var card = `
                     <div class="col-md-4 mb-4">
@@ -136,9 +133,7 @@ function viewAnimeDetails(animeId) {
             `;
             document.getElementById("animeModalBody").innerHTML = modalBody;
 
-            // Agregar un pequeño retraso antes de abrir el modal
             setTimeout(function() {
-                // Abrir el modal
                 var myModal = new bootstrap.Modal(document.getElementById('animeModal'));
                 myModal.show();
             }, 100);
@@ -146,5 +141,4 @@ function viewAnimeDetails(animeId) {
         .catch(error => console.error('Error:', error));
 }
 
-// Escuchar el evento de envío del formulario de búsqueda
 document.getElementById("searchForm").addEventListener("submit", searchAnime);
