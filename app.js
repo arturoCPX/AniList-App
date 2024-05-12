@@ -22,6 +22,7 @@ function fetchAnimeData(searchTerm) {
                 coverImage {
                     large
                 }
+                genres
             }
         }
     }
@@ -53,22 +54,26 @@ function fetchAnimeData(searchTerm) {
             document.getElementById("searchResults").innerHTML = "";
             // Mostrar los resultados en la página
             data.data.Page.media.forEach(anime => {
-                var card = `
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="${anime.coverImage.large}" class="card-img-top" alt="${anime.title.romaji}">
-                        <div class="card-body">
-                            <h5 class="card-title">${anime.title.romaji}</h5>
-                            <a href="#" class="btn btn-primary" onclick="viewAnimeDetails(${anime.id})" data-toggle="modal" data-target="#animeModal">Ver detalles</a>
+                // Filtrar animes Hentai
+                if (!anime.genres.includes("Hentai")) {
+                    var card = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${anime.coverImage.large}" class="card-img-top" alt="${anime.title.romaji}">
+                            <div class="card-body">
+                                <h5 class="card-title">${anime.title.romaji}</h5>
+                                <a href="#" class="btn btn-primary" onclick="viewAnimeDetails(${anime.id})" data-toggle="modal" data-target="#animeModal">Ver detalles</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                `;
-                document.getElementById("searchResults").innerHTML += card;
+                    `;
+                    document.getElementById("searchResults").innerHTML += card;
+                }
             });
         })
         .catch(error => console.error('Error:', error));
 }
+
 
 // Función para ver los detalles de un anime
 function viewAnimeDetails(animeId) {
