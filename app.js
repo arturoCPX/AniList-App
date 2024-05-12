@@ -75,7 +75,6 @@ function fetchAnimeData(searchTerm) {
 }
 
 
-// Función para ver los detalles de un anime
 function viewAnimeDetails(animeId) {
     var query = `
     query ($id: Int) {
@@ -136,6 +135,13 @@ function viewAnimeDetails(animeId) {
                 <p><strong>Géneros:</strong> ${anime.genres.join(", ")}</p>
             `;
             document.getElementById("animeModalBody").innerHTML = modalBody;
+
+            // Agregar un pequeño retraso antes de abrir el modal
+            setTimeout(function() {
+                // Abrir el modal
+                var myModal = new bootstrap.Modal(document.getElementById('animeModal'));
+                myModal.show();
+            }, 100);
         })
         .catch(error => console.error('Error:', error));
 }
