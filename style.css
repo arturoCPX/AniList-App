@@ -3,42 +3,10 @@
     object-fit: cover; 
 }
 
-#acercaDe{
-    display: flex;
+#acercaDe {
+    margin-bottom: 310px; 
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #212529;
-    padding: 20px;
-    border-top: 1px solid #ddd;
-    
-  }
- .footer.container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
- .footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
- .footer li {
-    margin-bottom: 10px;
-  }
- .footer a {
-    color: #337ab7;
-    text-decoration: none;
-  }
- .footer a:hover {
-    color: #23527c;
-  }
- .footer.text-right {
-    text-align: right;
-  }
-  .footer h5{
-    color: #ffffff;
-  }
-  
+#links {
+    margin-bottom: 370px; 
+}

@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Término de búsqueda predeterminado
+    const defaultSearchTerm = "anime";
+    
+    // Llama a la función fetchAnimeData con el término de búsqueda predeterminado
+    fetchAnimeData(defaultSearchTerm);
+});
+
+
 // Función para buscar anime
 function searchAnime(event) {
     event.preventDefault();
@@ -207,3 +216,4 @@ getAnimeRecommendations().then(recommendations => {
 
 
 document.getElementById("searchForm").addEventListener("submit", searchAnime);
+
