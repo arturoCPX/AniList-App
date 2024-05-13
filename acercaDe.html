@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Acerca De</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">AniList App</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="acercaDe.html">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="enlaces.html">Enlaces</a>
+            </li>
+          </ul>
+          <!-- Dentro de tu barra de navegación -->
+          <form
+            id="navbarSearchForm"
+            class="form-inline"
+            onsubmit="searchAnime(event)"
+          >
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="navbarSearchInput"
+                placeholder="Buscar anime..."
+              />
+              <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <section id="acercaDe">
+      <h1>Acerca De</h1>
+      <p>
+        Esta página web utilixa la Api de AniList para proporcionar información
+        sobre anime y manga. AniList recopila y comparte datos sobre nuestras
+        series favoritas. La Api de AniList ofrece una amplia gama de datos, que
+        incluyen, titulos, descripciones, géneros, personajes, reseñas y mas.
+      </p>
+      <h3>¿Qué puedes encontrar aquí?</h3>
+
+      <ul>
+        <li>Información detallada sobre miles de series de anime y manga</li>
+        <li>
+          Calificaciones para ayudarte a encontrar tu próximo anime favorito
+        </li>
+        <li>Recomendaciones personalizadas basadas en tus gustos</li>
+        <li>Listas de anime y manga para que puedas organizar tu colección</li>
+        
+      </ul>
+
+      <h3>¿Cómo funciona?</h3>
+
+      <p>
+        Esta página web utiliza la API de AniList para recuperar datos sobre
+        anime y manga. Los datos se procesan y presentan de una manera fácil de
+        usar y entender. 
+      </p>
+
+      <h3>¿Por qué usar esta página web?</h3>
+
+      <p>
+        Hay muchas razones para usar esta página web. Aquí hay algunos de los
+        beneficios:
+      </p>
+
+      <ul>
+        <li>Acceso a una gran cantidad de información sobre anime y manga</li>
+        <li>
+          Reseñas de usuarios y calificaciones para ayudarte a encontrar tu
+          próximo anime favorito
+        </li>
+        <li>Listas de anime y manga para que puedas organizar tu colección</li>
+      </ul>
+
+      <h3>¿Cómo puedo contribuir?</h3>
+
+      <p>
+        Siempre estamos buscando formas de mejorar esta página web. Si tienes
+        alguna sugerencia o comentario, no dudes en contactarnos. También puedes
+        contribuir al proyecto ayudando a traducir el contenido a otros idiomas
+        o corrigiendo errores en los datos.
+      </p>
+
+      <h3>¡Gracias por usar esta página web!</h3>
+    </section>
+
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Enlaces útiles</h5>
+            <ul>
+              <li><a href="#">Términos de servicio</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+              <li><a href="#">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5>Contacto</h5>
+            <p>Correo electrónico: AniListApp@gamil.com</p>
+            <p>Teléfono: +1234567890</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <footer class="mini-footer py-2 bg-light text-center">
+      <div class="container">
+        <p class="m-0">
+          &copy; 2024 AniList App. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
