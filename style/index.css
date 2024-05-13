@@ -3,4 +3,12 @@
     object-fit: cover; 
 }
 
+.custom-search-btn {
+    background-color: #ff6600; 
+    border-color: #ff6600; 
+}
 
+.btn-primary.custom-details-btn {
+    background-color: #ff6600; 
+    border-color: #ff6600;
+}

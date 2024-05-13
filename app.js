@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Término de búsqueda predeterminado
     const defaultSearchTerm = "anime";
     
-    // Llama a la función fetchAnimeData con el término de búsqueda predeterminado
     fetchAnimeData(defaultSearchTerm);
 });
 
@@ -67,16 +65,17 @@ function fetchAnimeData(searchTerm) {
             data.data.Page.media.forEach(anime => {
                 if (!anime.genres.includes("Hentai")) {
                     var card = `
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="${anime.coverImage.large}" class="card-img-top" alt="${anime.title.romaji}">
-                            <div class="card-body">
-                                <h5 class="card-title">${anime.title.romaji}</h5>
-                                <a href="#" class="btn btn-primary" onclick="viewAnimeDetails(${anime.id})" data-toggle="modal" data-target="#animeModal">Ver detalles</a>
-                            </div>
-                        </div>
-                    </div>
-                    `;
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="${anime.coverImage.large}" class="card-img-top" alt="${anime.title.romaji}">
+            <div class="card-body">
+                <h5 class="card-title">${anime.title.romaji}</h5>
+                <a href="#" class="btn btn-primary custom-details-btn" onclick="viewAnimeDetails(${anime.id})" data-toggle="modal" data-target="#animeModal">Ver detalles</a>
+            </div>
+        </div>
+    </div>
+`;
+                    
                     document.getElementById("searchResults").innerHTML += card;
                 }
             });
@@ -153,8 +152,7 @@ function viewAnimeDetails(animeId) {
         .catch(error => console.error('Error:', error));
 }
 
-// Función para obtener las recomendaciones de anime de AniList
-// Función para obtener las recomendaciones de anime de AniList
+
 async function getAnimeRecommendations() {
     const query = `
         query {
@@ -189,15 +187,13 @@ async function getAnimeRecommendations() {
         return data.data.recommendations;
     } catch (error) {
         console.log('Error: ', error);
-        return []; // Devolver un array vacío en caso de error
+        return [];
     }
 }
 
 getAnimeRecommendations().then(recommendations => {
-    // Limitar las recomendaciones a 4
     const recommendationsLimit = 4;
     recommendations.slice(0, recommendationsLimit).forEach(recommendation => {
-        // Crear un card de anime
         const card = `
             <div class="col-md-3">
                 <div class="card">
@@ -209,7 +205,6 @@ getAnimeRecommendations().then(recommendations => {
                 </div>
             </div>
             `;
-        // Agregar el card al contenido de la página
         document.querySelector('.row.mb-3').innerHTML += card;
     });
 });
